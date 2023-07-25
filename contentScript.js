@@ -25,15 +25,17 @@
                 xLogo.parentElement.append(twitterLogo);
                 xLogo.remove();
             }
-            document.getelement
 
-            //let iconLink = document.createElement("link");
-            //iconLink.src = chrome.runtime.getURL("assets/TwitterLogo.png");
-            //iconLink.rel = "icon"
-            //document.head.append(iconLink);
+            var links = document.querySelectorAll("link[rel~='icon']")
+            console.log("Found Links Start ---------");
+            links.forEach(link => {
+                console.log(link);
+                link.href = chrome.runtime.getURL("assets/TwitterLogoBlue.png");
+            });
+            console.log("Found Links End ---------");
         }
     }
-    setTimeout(() => {loadLogo()}, 500);
-    setTimeout(() => {loadLogo()}, 1000);
+    setTimeout(() => {loadLogo()}, 600);
+    setTimeout(() => {loadLogo()}, 3000);
 })();
 
